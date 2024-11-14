@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <title>Form Tambah Data</title>
+    <style>
+      body {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+      }
+      .form-container {
+        background-color: #ffffff;
+        padding: 20px;
+        width: 100%;
+      }
+      h1 {
+        font-family: Arial, sans-serif;
+        color: #000000;
+      }
+      .form-group {
+        display: flex;
+        margin-bottom: 15px;
+      }
+      label {
+        width: 160px;
+        margin-right: 10px;
+        color: #000000;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      select {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #848484;
+        box-sizing: border-box;
+      }
+      .button-group {
+        text-align: center;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .info-button {
+        background-color: #646464;
+        color: rgb(255, 255, 255);
+      }
+      .add-button {
+        background-color: #2b91ff;
+        color: rgb(255, 255, 255);
+      }
+      .cancel-button {
+        background-color: #d4aa00;
+        color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Form Tambah Data</h1>
+      <form method="get">
+        <div class="form-group">
+          <label for="idPemesan">ID Kamar : </label>
+          <input
+            type="text"
+            id="idKamar"
+            name="idkamar"
+            maxlength="100"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="tipeKamar">Tipe Kamar : </label>
+          <select id="tipeKamar" name="tipeKamar" required>
+            <option value="-" selected>---Pilih---</option>
+            <option value="STD">Standard</option>
+            <option value="DLX">Deluxe</option>
+            <option value="FMY">Family</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="breakfast">Termasuk Fasilitas : </label>
+          <input type="checkbox" id="fasilitas" name="fasilitas" value="Ya" />
+          Ya
+        </div>
+        <div class="form-group">
+          <label for="hargaPesanan">Harga : </label>
+          <input
+            type="number"
+            id="hargaPesanan"
+            name="hargaPesanan"
+            maxlength="60"
+            required
+          />
+        </div>
+        <div class="button-group">
+          <button
+            type="infoHotel"
+            class="info-button"
+            onclick=" window.location.href = '../Modul3/M3-T2.html'"
+          >
+            Kamar & Fasilitas
+          </button>
+          <button type="add" class="add-button">Tambah</button>
+          <button type="reset" class="cancel-button">Batal</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
