@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "id">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width=device-width", initial-scale = 1.0>
+        <title>Mengubah ID dan Input</title>
+        <style>
+            body{
+                font-family : Arial, sans-serif;
+            }
+        </style>
+        <script src = "jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#edit").click(function () {
+                    $("#fakultas").html("");
+                    $("#fakultas").append("Fakultas Ilmu Komputer");
+                    $("#unvts").val("Universitas Kuningan");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id = "fakultas">fkom</div>
+        <input type = "text" id = "unvts" maxlength = "50" size = "16" value = "uniku">
+        <br/>
+        <button id = "edit">Merubah</button>
+    </body>
+</html>

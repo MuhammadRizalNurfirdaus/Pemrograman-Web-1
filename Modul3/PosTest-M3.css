@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    border: 1px solid #333;
+    width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .image {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #333;
+    overflow: hidden;
+  }
+  .image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .content {
+    flex: 1;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    border: 1px solid #333;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  .excerpt {
+    border: 1px solid #333;
+    padding: 10px;
+    flex: 1;
+    margin-bottom: 10px;
+  }
+  .read-more {
+    text-align: right;
+    font-style: italic;
+  }

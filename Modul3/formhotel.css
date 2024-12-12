@@ -1,0 +1,40 @@
+body {
+    background-color : #ffffff;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    height : 80vh;}
+.form-container {
+    background-color : #ffffff;
+    padding : 20px;
+    width : 100%;}
+h1 {
+    color : #000000;}
+.form-group {
+    display : flex;
+    margin-bottom : 15px;}
+label {
+    width : 160px;
+    margin-right : 10px;
+    color : #000000;}
+input[type = "text"], input[type = "number"], input[type = "date"], select {
+    flex-grow : 1;
+    padding : 10px;
+    border-radius : 5px;
+    border : 1px solid #848484;
+    box-sizing : border-box;}
+.button-group {
+    text-align : center;
+    margin-top : 20px;}
+button {
+    padding : 10px 20px;
+    font-size : 16px;
+    border-radius : 5px;
+    cursor : pointer;
+    margin : 5px;}
+.save-button {
+    background-color : #2b91ff;
+    color : rgb(255, 255, 255);}
+.cancel-button {
+    background-color : #d4aa00;
+    color : rgb(255, 255, 255);}

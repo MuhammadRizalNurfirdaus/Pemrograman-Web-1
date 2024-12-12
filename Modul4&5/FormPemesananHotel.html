@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan Hotel</title>
+    <link rel="stylesheet" href="../Modul4/formhotel.css" />
+</head>
+<body>
+    <div class="form-container">
+        <h1>Form Pemesanan Hotel</h1>
+        <form method="get" onsubmit="calculateTotal(event)">
+            <div class="form-group">
+                <label for="idPemesan">ID Pemesan : </label>
+                <input type="text" id="idPemesan" name="idPemesan" maxlength="100" required />
+            </div>
+
+            <div class="form-group">
+                <label for="namaPemesan">Nama Pemesan : </label>
+                <input type="text" id="namaPemesan" name="namaPemesan" maxlength="100" required />
+            </div>
+
+            <div class="form-group">
+                <label for="noIdentitas">Nomor Identitas : </label>
+                <input type="number" id="noIdentitas" name="noIdentitas" maxlength="60" required />
+            </div>
+
+            <div class="form-group">
+                <label for="tipeKamar">Tipe Kamar : </label>
+                <select id="tipeKamar" name="tipeKamar" required>
+                    <option value="" selected>---Pilih---</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Deluxe">Deluxe</option>
+                    <option value="Family">Family</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tglPesanan">Tanggal Pesanan : </label>
+                <input type="date" id="tglPesanan" name="tglPesanan" required />
+            </div>
+
+            <div class="form-group">
+                <label for="durasiMenginap">Durasi Menginap : </label>
+                <input type="number" id="durasiMenginap" name="durasiMenginap" maxlength="3" required />
+                <span> Hari</span>
+            </div>
+
+            <div class="form-group">
+                <label for="breakfast">Termasuk Breakfast </label>
+                <input type="checkbox" id="breakfast" name="breakfast" value="Ya" /> Ya
+            </div>
+
+            <div class="form-group">
+                <label for="totalBiaya">Total Biaya : </label>
+                <input type="text" id="totalBayar" name="totalBiaya" readonly />
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="save-button">Simpan</button>
+                <button type="reset" class="cancel-button">Batal</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function calculateTotal(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir default
+
+            const tipeKamar = document.getElementById("tipeKamar").value;
+            const durasiMenginap = parseInt(document.getElementById("durasiMenginap").value) || 0;
+            const breakfast = document.getElementById("breakfast").checked;
+
+            let hargaKamar = 0;
+
+            if (tipeKamar === "Standard") {
+                hargaKamar = 300000;
+            } else if (tipeKamar === "Deluxe") {
+                hargaKamar = 500000;
+            } else if (tipeKamar === "Family") {
+                hargaKamar = 700000;
+            }
+
+            let total = hargaKamar * durasiMenginap;
+
+            // Diskon jika durasi menginap lebih dari 3 hari
+            if (durasiMenginap > 3) {
+                total *= 0.9;
+            }
+
+            // Tambahkan biaya breakfast
+            if (breakfast) {
+                total += 80000;
+            }
+
+            // Tampilkan total biaya di input Total Bayar
+            document.getElementById("totalBayar").value = "Rp " + total.toLocaleString();
+        }
+    </script>
+</body>
+</html>

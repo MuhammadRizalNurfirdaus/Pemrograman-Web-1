@@ -1,0 +1,70 @@
+.navbar {
+    background-color: #444;
+    overflow : hidden;
+    display : flex;}
+.navbar a {
+    color : #fff;
+    padding : 14px 20px;
+    text-decoration : none;
+    display : block;}
+.navbar a :hover {
+    background-color : #555;}
+nav ul {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    display : flex;
+    gap : 20px;
+    background-color : #444;}
+nav ul li {
+    position : relative;}
+.submenu {
+    display : none;
+    position : absolute;
+    left : 0;
+    background-color : #444;
+    padding : 0;
+    margin : 0;
+    list-style : none;
+    top : 100%;
+    min-width : 160px;
+    z-index : 1;}
+.submenu li {
+    position : relative;}
+.submenu .submenu {
+    left : 100%;
+    top : 0;}
+.menu-checkbox {
+    display : none;}
+.menu-checkbox:checked + label + .submenu {
+    display : block;}
+nav ul li a, nav ul li label {
+    color : #fff;
+    padding : 14px 20px;
+    text-decoration : none;
+    display : block;}
+nav ul li a :hover, nav ul li label :hover {
+    background-color :rgb(66, 66, 66)5;}
+    .content {
+display : flex;
+padding : 20px;}
+.video-section {
+    width : 30%;
+    margin-right : 20px;}
+.video-section iframe {
+    width : 100%;
+    margin-bottom : 10px;}
+.foto {
+    width : 70%;
+    display : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap : 10px;}
+.foto img {
+    width : 100%;
+    height : auto;
+    border : 3px solid #333;}
+.footer p {
+    margin: 0;
+    padding : 10px 0;
+    background-color : black;
+    text-align : center;}
