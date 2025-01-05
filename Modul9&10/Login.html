@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Login</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f7f9fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+      h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333333;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        text-align: left;
+        color: #555555;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .error-message {
+        color: #ff4d4d;
+        font-size: 14px;
+        margin-top: -12px;
+        margin-bottom: 12px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="loginForm">
+      <h2>Login</h2>
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Masukkan username"
+        required
+      />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Masukkan password"
+        required
+      />
+      <div class="error-message" id="errorMessage">
+        Username atau password salah!
+      </div>
+      <button type="button" id="loginButton">Login</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const errorMessage = document.getElementById("errorMessage");
+
+          const correctUsername = "Admin";
+          const correctPassword = "admin12345";
+
+          if (username === correctUsername && password === correctPassword) {
+            alert("Login Sukses!");
+            window.location.href = "Admin.html";
+          } else {
+            errorMessage.style.display = "block";
+          }
+        });
+    </script>
+  </body>
+</html>

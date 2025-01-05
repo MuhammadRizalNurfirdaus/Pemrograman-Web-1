@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Kamar</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: "Poppins", Arial, sans-serif;
+      }
+      h1 {
+        font-weight: bold;
+        color: #333;
+      }
+      table {
+        font-size: 1.1rem;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+      }
+      table th {
+        text-align: center;
+        background-color: #343a40;
+        color: #fff;
+      }
+      table td {
+        text-align: center;
+        vertical-align: middle;
+      }
+      img {
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      .table-responsive {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Informasi Kamar</h1>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>ID Kamar</th>
+              <th>Gambar Ruangan</th>
+              <th>Jenis Kamar</th>
+              <th>Harga</th>
+              <th>Fasilitas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>K01</td>
+              <td>
+                <img
+                  src="./Images/kamar6.jpg"
+                  alt="Deluxe"
+                  class="img-fluid"
+                  style="width: 150px; height: auto"
+                />
+              </td>
+              <td>Deluxe</td>
+              <td>Rp.700,000</td>
+              <td>AC, Wi-Fi, TV, Breakfast</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>K02</td>
+              <td>
+                <img
+                  src="./Images/kamar4.jpg"
+                  alt="Family"
+                  class="img-fluid"
+                  style="width: 150px; height: auto"
+                />
+              </td>
+              <td>Family</td>
+              <td>Rp.500,000</td>
+              <td>AC, TV, Breakfast</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>K03</td>
+              <td>
+                <img
+                  src="./Images/kamar2.jpg"
+                  alt="Standard"
+                  class="img-fluid"
+                  style="width: 150px; height: auto"
+                />
+              </td>
+              <td>Standard</td>
+              <td>Rp.300,000</td>
+              <td>Kipas, TV</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

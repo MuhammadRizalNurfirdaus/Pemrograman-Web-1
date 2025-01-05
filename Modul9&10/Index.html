@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B&B HOTELS</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .dropdown-submenu {
+        position: relative;
+      }
+      .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -5px;
+      }
+      body {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      header {
+        background-image: url("./Images/TampilanHotel.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+      }
+      .logo {
+        max-width: 80px;
+      }
+      nav {
+        background-color: black;
+        padding: 10px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+      }
+      .nav-link {
+        font-weight: bold;
+        color: white !important;
+        padding: 5px 15px;
+      }
+      .nav-link:hover {
+        background-color: #0056b3;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img
+          src="./Images/logo.png"
+          alt="Logo Hotel"
+          class="logo rounded-circle"
+        />
+        <h1 class="mt-3">B&B HOTELS</h1>
+      </div>
+    </header>
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./Gallery.html" target="content-frame"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./Kamar.html" target="content-frame"
+            >Kamar</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            target="content-frame"
+            data-bs-toggle="dropdown"
+            >Fasilitas</a
+          >
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                class="dropdown-item"
+                href="./Petualangan_Alam.html"
+                target="content-frame"
+                >Petualangan Alam</a
+              >
+            </li>
+            <li class="dropdown-submenu">
+              <a
+                class="dropdown-item dropdown-toggle"
+                href="#"
+                target="content-frame"
+                >Kolam Renang</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="./Kolam_Air_Panas.html"
+                    target="content-frame"
+                    >Kolam Air Panas</a
+                  >
+                </li>
+                <li class="dropdown-submenu">
+                  <a
+                    class="dropdown-item dropdown-toggle"
+                    href="#"
+                    target="content-frame"
+                    >Kolam Renang Anak & Dewasa</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="./Kolam_reguler.html"
+                        target="content-frame"
+                        >Reguler</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="./Kolam_premium.html"
+                        target="content-frame"
+                        >Premium</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-item" href="./GYM.html" target="content-frame"
+                >Pusat Kebugaran</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="./Ruang_Rapat.html"
+                target="content-frame"
+                >Ruang Rapat</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="./Form_Pemesanan.html"
+            target="content-frame"
+            >Pesan Sekarang</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./Login.html" target="content-frame"
+            >Login</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main class="my-4">
+      <iframe
+        name="content-frame"
+        src="./Gallery.html"
+        class="w-100"
+        style="height: 600px; border: none"
+      ></iframe>
+    </main>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+      <p>&copy; 2024 B&B HOTELS</p>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.querySelectorAll(".dropdown-submenu > a").forEach((element) => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const submenu = element.nextElementSibling;
+          if (submenu) {
+            submenu.classList.toggle("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

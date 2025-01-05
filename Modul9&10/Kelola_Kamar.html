@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Data Kamar</title>
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background-color: #eef2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 500px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 6px;
+        display: block;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="file"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #007bff;
+        background-color: #fff;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.02);
+      }
+      button:active {
+        transform: scale(1);
+      }
+      @media (max-width: 768px) {
+        form {
+          padding: 20px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        button {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formTambahKamar">
+      <h2>Tambah Data Kamar</h2>
+      <label for="idKamar">ID Kamar:</label>
+      <input
+        type="text"
+        id="idKamar"
+        name="idKamar"
+        placeholder="Masukkan ID Kamar"
+        required
+      />
+
+      <label for="jenisKamar">Jenis Kamar:</label>
+      <input
+        type="text"
+        id="jenisKamar"
+        name="jenisKamar"
+        placeholder="Masukkan Jenis Kamar"
+        required
+      />
+
+      <label for="gambarKamar">Gambar Kamar:</label>
+      <input
+        type="file"
+        id="gambarKamar"
+        name="gambarKamar"
+        accept="image/*"
+        required
+      />
+
+      <label for="fasilitas">Fasilitas:</label>
+      <textarea
+        id="fasilitas"
+        name="fasilitas"
+        placeholder="Masukkan fasilitas kamar"
+        required
+      ></textarea>
+
+      <label for="harga">Harga:</label>
+      <input
+        type="number"
+        id="harga"
+        name="harga"
+        placeholder="Masukkan Harga (Rp)"
+        required
+      />
+
+      <button type="submit">Tambah Data</button>
+    </form>
+    <script>
+      document
+        .getElementById("formTambahKamar")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const idKamar = document.getElementById("idKamar").value;
+          const jenisKamar = document.getElementById("jenisKamar").value;
+          const gambarKamar = document.getElementById("gambarKamar").files[0];
+          const fasilitas = document.getElementById("fasilitas").value;
+          const harga = document.getElementById("harga").value;
+
+          console.log({
+            idKamar,
+            jenisKamar,
+            gambarKamar,
+            fasilitas,
+            harga,
+          });
+          alert("Data kamar berhasil ditambahkan!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

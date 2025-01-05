@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #f4f4f4;
+      }
+      .form-container {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: #000000;
+      }
+      table {
+        width: 100%;
+        border-spacing: 10px;
+        margin-bottom: 15px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input.short-input {
+        width: 30%;
+      }
+      input[type="checkbox"] {
+        width: auto;
+      }
+      .durasi-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      input.short-input {
+        width: 100px;
+      }
+      .form-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .form-buttons button {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .form-buttons button[type="submit"] {
+        background-color: #180cf4;
+      }
+      .form-buttons button[type="submit"]:hover {
+        background-color: #0c0fdf;
+      }
+      .form-buttons button[type="reset"] {
+        background-color: #f40820;
+      }
+      .form-buttons button[type="reset"]:hover {
+        background-color: #c82333;
+      }
+      .gender {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .gender label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Form Pemesanan</h1>
+      <form>
+        <table>
+          <tr>
+            <td><label for="id-pemesanan">ID Pemesan:</label></td>
+            <td><input type="number" id="id-pemesanan" min="1" required /></td>
+          </tr>
+          <tr>
+            <td><label for="nama-pemesan">Nama Pemesan:</label></td>
+            <td><input type="text" id="nama-pemesan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="nomor-identitas">Nomor Identitas:</label></td>
+            <td><input type="number" id="nomor-identitas" required /></td>
+          </tr>
+          <tr>
+            <td><b>Jenis Kelamin:</b></td>
+            <td class="gender">
+              <label>
+                <input
+                  type="radio"
+                  name="jenis-kelamin"
+                  value="Laki-laki"
+                  required
+                />
+                Laki-laki
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="jenis-kelamin"
+                  value="Perempuan"
+                  required
+                />
+                Perempuan
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tipe-kamar">Tipe Kamar:</label></td>
+            <td>
+              <select id="tipe-kamar" required>
+                <option value="">-- Pilih --</option>
+                <option value="standar">STANDARD</option>
+                <option value="family">FAMILY</option>
+                <option value="deluxe">DELUXE</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tanggal-pesan">Tanggal Pesan:</label></td>
+            <td><input type="date" id="tanggal-pesan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="durasi">Durasi Menginap:</label></td>
+            <td>
+              <div class="durasi-container">
+                <input
+                  type="number"
+                  id="durasi"
+                  min="1"
+                  class="short-input"
+                  required
+                />
+                <span>Hari</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="breakfast">Termasuk Breakfast?</label></td>
+            <td><input type="checkbox" id="breakfast" /> Ya</td>
+          </tr>
+          <tr>
+            <td><label for="total-bayar">Total Bayar:</label></td>
+            <td>
+              <input type="text" id="total-bayar" readonly />
+            </td>
+          </tr>
+        </table>
+        <div class="form-buttons">
+          <button type="submit">Simpan</button>
+          <button type="reset">Batal</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hargaKamarData = {
+          standar: 300000,
+          family: 500000,
+          deluxe: 700000,
+        };
+
+        function hitungHargaKamar() {
+          const tipeKamar = document.getElementById("tipe-kamar").value;
+          const durasi = parseInt(document.getElementById("durasi").value) || 0;
+          const includeBreakfast = document.getElementById("breakfast").checked;
+
+          let totalBayar = 0;
+
+          if (tipeKamar) {
+            let hargaKamar = hargaKamarData[tipeKamar];
+            if (includeBreakfast) {
+              hargaKamar += 80000;
+            }
+            if (durasi > 3) {
+              hargaKamar *= 0.9;
+            }
+            totalBayar = hargaKamar * durasi;
+          }
+
+          document.getElementById(
+            "total-bayar"
+          ).value = `Rp ${totalBayar.toLocaleString()}`;
+        }
+
+        function tampilkanResume(event) {
+          event.preventDefault();
+
+          const idPemesan = document.getElementById("id-pemesanan").value;
+          const namaPemesan = document.getElementById("nama-pemesan").value;
+          const nomorIdentitas =
+            document.getElementById("nomor-identitas").value;
+          const jenisKelamin = document.querySelector(
+            "input[name='jenis-kelamin']:checked"
+          )?.value;
+          const tipeKamar = document.getElementById("tipe-kamar").value;
+          const tanggalPesan = document.getElementById("tanggal-pesan").value;
+          const durasi = document.getElementById("durasi").value;
+          const totalBayar = document.getElementById("total-bayar").value;
+
+          if (nomorIdentitas.length !== 16 || isNaN(nomorIdentitas)) {
+            alert("Nomor identitas harus berisi 16 digit angka!");
+            return;
+          }
+          if (!jenisKelamin) {
+            alert("Harap pilih jenis kelamin!");
+            return;
+          }
+
+          alert(`Resume Pemesanan:
+            ============================
+            ID Pemesan : ${idPemesan}
+            Nama Pemesan : ${namaPemesan}
+            Nomor Identitas : ${nomorIdentitas}
+            Jenis Kelamin : ${jenisKelamin}
+            Tipe Kamar : ${tipeKamar.toUpperCase()}
+            Tanggal Pesan : ${tanggalPesan}
+            Durasi Menginap : ${durasi} hari
+            Total Bayar : ${totalBayar}
+          `);
+        }
+
+        const form = document.querySelector("form");
+        form.addEventListener("submit", tampilkanResume);
+        document
+          .getElementById("tipe-kamar")
+          .addEventListener("change", hitungHargaKamar);
+        document
+          .getElementById("durasi")
+          .addEventListener("input", hitungHargaKamar);
+        document
+          .getElementById("breakfast")
+          .addEventListener("change", hitungHargaKamar);
+      });
+    </script>
+  </body>
+</html>

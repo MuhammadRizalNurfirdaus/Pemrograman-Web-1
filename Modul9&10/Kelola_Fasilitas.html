@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Fasilitas</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f9f9fb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      form {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      label {
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 5px;
+        display: block;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="time"],
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+        background-color: #fefefe;
+        transition: border-color 0.3s ease;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="formTambahFasilitas">
+      <h2>Tambah Fasilitas</h2>
+
+      <label for="idFasilitas">ID Fasilitas:</label>
+      <input
+        type="text"
+        id="idFasilitas"
+        name="idFasilitas"
+        placeholder="Masukkan ID Fasilitas"
+        required
+      />
+
+      <label for="namaFasilitas">Nama Fasilitas:</label>
+      <input
+        type="text"
+        id="namaFasilitas"
+        name="namaFasilitas"
+        placeholder="Masukkan Nama Fasilitas"
+        required
+      />
+
+      <label for="deskripsiFasilitas">Deskripsi Fasilitas:</label>
+      <textarea
+        id="deskripsiFasilitas"
+        name="deskripsiFasilitas"
+        placeholder="Masukkan Deskripsi Fasilitas"
+        required
+      ></textarea>
+
+      <div class="grid-container">
+        <div>
+          <label for="hargaWeekend">Harga Weekend:</label>
+          <input
+            type="number"
+            id="hargaWeekend"
+            name="hargaWeekend"
+            placeholder="Rp"
+            required
+          />
+        </div>
+        <div>
+          <label for="hargaWeekday">Harga Weekday:</label>
+          <input
+            type="number"
+            id="hargaWeekday"
+            name="hargaWeekday"
+            placeholder="Rp"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div>
+          <label for="jamBuka">Jam Buka:</label>
+          <input type="time" id="jamBuka" name="jamBuka" required />
+        </div>
+        <div>
+          <label for="jamTutup">Jam Tutup:</label>
+          <input type="time" id="jamTutup" name="jamTutup" required />
+        </div>
+      </div>
+
+      <label for="kuota">Kuota:</label>
+      <input type="number" id="kuota" name="kuota" placeholder="Maksimal" required />
+
+      <button type="submit">Tambah Fasilitas</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("formTambahFasilitas")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const idFasilitas = document.getElementById("idFasilitas").value;
+          const namaFasilitas = document.getElementById("namaFasilitas").value;
+          const deskripsiFasilitas =
+            document.getElementById("deskripsiFasilitas").value;
+          const hargaWeekend = document.getElementById("hargaWeekend").value;
+          const hargaWeekday = document.getElementById("hargaWeekday").value;
+          const kuota = document.getElementById("kuota").value;
+          const jamBuka = document.getElementById("jamBuka").value;
+          const jamTutup = document.getElementById("jamTutup").value;
+
+          console.log({
+            idFasilitas,
+            namaFasilitas,
+            deskripsiFasilitas,
+            hargaWeekend,
+            hargaWeekday,
+            kuota,
+            jamBuka,
+            jamTutup,
+          });
+
+          alert("Fasilitas berhasil ditambahkan!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
