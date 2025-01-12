@@ -12,31 +12,29 @@
       }
       h1 {
         font-weight: bold;
-        color: #333;
+        color: #343a40;
       }
       table {
         font-size: 1.1rem;
+        background-color: #ffffff;
         border-radius: 10px;
         overflow: hidden;
-        background-color: #fff;
       }
-      table th {
-        text-align: center;
-        background-color: #343a40;
-        color: #fff;
-      }
+      table th,
       table td {
         text-align: center;
         vertical-align: middle;
       }
-      img {
-        object-fit: cover;
-        border-radius: 5px;
+      table thead th {
+        background-color: #343a40;
+        color: #ffffff;
       }
-      .table-responsive {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
+      table tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+      img {
+        border-radius: 8px;
+        object-fit: cover;
       }
     </style>
   </head>
@@ -44,8 +42,8 @@
     <div class="container my-5">
       <h1 class="text-center mb-4">Informasi Kamar</h1>
       <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-          <thead>
+        <table class="table table-bordered table-hover shadow-sm">
+          <thead class="table-dark">
             <tr>
               <th>No</th>
               <th>ID Kamar</th>
@@ -69,7 +67,7 @@
               </td>
               <td>Deluxe</td>
               <td>Rp.700,000</td>
-              <td>AC, Wi-Fi, TV, Breakfast</td>
+              <td>AC, Wi-Fi, TV</td>
             </tr>
             <tr>
               <td>2</td>
@@ -84,7 +82,7 @@
               </td>
               <td>Family</td>
               <td>Rp.500,000</td>
-              <td>AC, TV, Breakfast</td>
+              <td>AC, TV</td>
             </tr>
             <tr>
               <td>3</td>

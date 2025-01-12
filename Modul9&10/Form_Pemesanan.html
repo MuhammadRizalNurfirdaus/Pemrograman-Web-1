@@ -95,95 +95,6 @@
         gap: 5px;
       }
     </style>
-  </head>
-  <body>
-    <div class="form-container">
-      <h1>Form Pemesanan</h1>
-      <form>
-        <table>
-          <tr>
-            <td><label for="id-pemesanan">ID Pemesan:</label></td>
-            <td><input type="number" id="id-pemesanan" min="1" required /></td>
-          </tr>
-          <tr>
-            <td><label for="nama-pemesan">Nama Pemesan:</label></td>
-            <td><input type="text" id="nama-pemesan" required /></td>
-          </tr>
-          <tr>
-            <td><label for="nomor-identitas">Nomor Identitas:</label></td>
-            <td><input type="number" id="nomor-identitas" required /></td>
-          </tr>
-          <tr>
-            <td><b>Jenis Kelamin:</b></td>
-            <td class="gender">
-              <label>
-                <input
-                  type="radio"
-                  name="jenis-kelamin"
-                  value="Laki-laki"
-                  required
-                />
-                Laki-laki
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="jenis-kelamin"
-                  value="Perempuan"
-                  required
-                />
-                Perempuan
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td><label for="tipe-kamar">Tipe Kamar:</label></td>
-            <td>
-              <select id="tipe-kamar" required>
-                <option value="">-- Pilih --</option>
-                <option value="standar">STANDARD</option>
-                <option value="family">FAMILY</option>
-                <option value="deluxe">DELUXE</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td><label for="tanggal-pesan">Tanggal Pesan:</label></td>
-            <td><input type="date" id="tanggal-pesan" required /></td>
-          </tr>
-          <tr>
-            <td><label for="durasi">Durasi Menginap:</label></td>
-            <td>
-              <div class="durasi-container">
-                <input
-                  type="number"
-                  id="durasi"
-                  min="1"
-                  class="short-input"
-                  required
-                />
-                <span>Hari</span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><label for="breakfast">Termasuk Breakfast?</label></td>
-            <td><input type="checkbox" id="breakfast" /> Ya</td>
-          </tr>
-          <tr>
-            <td><label for="total-bayar">Total Bayar:</label></td>
-            <td>
-              <input type="text" id="total-bayar" readonly />
-            </td>
-          </tr>
-        </table>
-        <div class="form-buttons">
-          <button type="submit">Simpan</button>
-          <button type="reset">Batal</button>
-        </div>
-      </form>
-    </div>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const hargaKamarData = {
@@ -265,5 +176,93 @@
           .addEventListener("change", hitungHargaKamar);
       });
     </script>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Form Pemesanan</h1>
+      <form>
+        <table>
+          <tr>
+            <td><label for="id-pemesanan">ID Pemesan:</label></td>
+            <td><input type="number" id="id-pemesanan" min="1" required /></td>
+          </tr>
+          <tr>
+            <td><label for="nama-pemesan">Nama Pemesan:</label></td>
+            <td><input type="text" id="nama-pemesan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="nomor-identitas">Nomor Identitas:</label></td>
+            <td><input type="number" id="nomor-identitas" required /></td>
+          </tr>
+          <tr>
+            <td><b>Jenis Kelamin:</b></td>
+            <td class="gender">
+              <label>
+                <input
+                  type="radio"
+                  name="jenis-kelamin"
+                  value="Laki-laki"
+                  required
+                />
+                Laki-laki
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="jenis-kelamin"
+                  value="Perempuan"
+                  required
+                />
+                Perempuan
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tipe-kamar">Tipe Kamar:</label></td>
+            <td>
+              <select id="tipe-kamar" required>
+                <option value="">-- Pilih --</option>
+                <option value="standar">STANDAR</option>
+                <option value="family">FAMILY</option>
+                <option value="deluxe">DELUXE</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tanggal-pesan">Tanggal Pesan:</label></td>
+            <td><input type="date" id="tanggal-pesan" required /></td>
+          </tr>
+          <tr>
+            <td><label for="durasi">Durasi Menginap:</label></td>
+            <td>
+              <div class="durasi-container">
+                <input
+                  type="number"
+                  id="durasi"
+                  min="1"
+                  class="short-input"
+                  required
+                />
+                <span>Hari</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="breakfast">Termasuk Breakfast?</label></td>
+            <td><input type="checkbox" id="breakfast" /> Ya</td>
+          </tr>
+          <tr>
+            <td><label for="total-bayar">Total Bayar:</label></td>
+            <td>
+              <input type="text" id="total-bayar" readonly />
+            </td>
+          </tr>
+        </table>
+        <div class="form-buttons">
+          <button type="submit">Simpan</button>
+          <button type="reset">Batal</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
